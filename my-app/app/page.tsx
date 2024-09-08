@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import data from "./morsecode.json";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 type StringObject = {
     [key: string]: string;
 };
@@ -12,11 +12,11 @@ export default function Home() {
     const data1: StringObject = data;
     // console.log(data);
     let element: string = "";
-    function handleChange(event) {
+    function handleChange(event: ChangeEvent) {
         settext(event.target.value);
         console.log(text);
     }
-    function handleSubmit(event) {
+    function handleSubmit(event: HTMLFormElement) {
         event.preventDefault();
         let temp = text.toUpperCase();
         for (let index = 0; index < text.length; index++) {
@@ -29,7 +29,7 @@ export default function Home() {
                 console.log(element);
             }
         }
-        setencoded(element);
+        return setencoded(element);
         // const temp = "w 3";
         // console.log(temp[1]);
         // console.log(temp[2]);
