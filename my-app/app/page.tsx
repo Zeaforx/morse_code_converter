@@ -12,11 +12,11 @@ export default function Home() {
     const data1: StringObject = data;
     // console.log(data);
     let element: string = "";
-    function handleChange(event: ChangeEvent) {
+    function handleChange(event: ChangeEvent<HTMLTextAreaElement>) {
         settext(event.target.value);
         console.log(text);
     }
-    function handleSubmit(event: HTMLFormElement) {
+    function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         let temp = text.toUpperCase();
         for (let index = 0; index < text.length; index++) {
